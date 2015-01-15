@@ -84,6 +84,18 @@ public class Principal extends Activity implements TextToSpeech.OnInitListener{
         startActivityForResult(i, CTEHABLAR);
     }
 
+    public void espanol(View view){
+        tts.setLanguage(new Locale("es", "ES"));
+        in.setEnabled(true);
+        es.setEnabled(false);
+    }
+
+    public void ingles(View view){
+        tts.setLanguage(Locale.US);
+        in.setEnabled(false);
+        es.setEnabled(true);
+    }
+
     /***********************************************************************/
     /*                                                                     */
     /*                            METODOS DE TTS                           */
@@ -139,15 +151,4 @@ public class Principal extends Activity implements TextToSpeech.OnInitListener{
         }
     }
 
-    public void espanol(View view){
-        tts.setLanguage(new Locale("es", "ES"));
-        in.setEnabled(true);
-        es.setEnabled(false);
-    }
-
-    public void ingles(View view){
-        tts.setLanguage(Locale.US);
-        in.setEnabled(false);
-        es.setEnabled(true);
-    }
 }

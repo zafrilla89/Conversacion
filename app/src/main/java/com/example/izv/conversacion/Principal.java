@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class Principal extends Activity implements TextToSpeech.OnInitListener{
@@ -21,7 +22,7 @@ public class Principal extends Activity implements TextToSpeech.OnInitListener{
     private TextToSpeech tts;
     private TextView tv;
     String habla, respuesta;
-    Button b;
+    Button b, es, in;
 
 
     /***********************************************************************/
@@ -62,6 +63,9 @@ public class Principal extends Activity implements TextToSpeech.OnInitListener{
         startActivityForResult(intent, CTE);
         tv=(TextView)findViewById(R.id.tv);
         b=(Button)findViewById(R.id.button);
+        es=(Button)findViewById(R.id.es);
+        in=(Button)findViewById(R.id.in);
+        es.setEnabled(false);
     }
 
     /***********************************************************************/
@@ -135,4 +139,15 @@ public class Principal extends Activity implements TextToSpeech.OnInitListener{
         }
     }
 
+    public void espanol(View view){
+        tts.setLanguage(new Locale("es", "ES"));
+        in.setEnabled(true);
+        es.setEnabled(false);
+    }
+
+    public void ingles(View view){
+        tts.setLanguage(Locale.US);
+        in.setEnabled(false);
+        es.setEnabled(true);
+    }
 }

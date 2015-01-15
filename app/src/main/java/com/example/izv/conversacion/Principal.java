@@ -21,8 +21,8 @@ public class Principal extends Activity implements TextToSpeech.OnInitListener{
     final private int CTEHABLAR =2;
     private TextToSpeech tts;
     private TextView tv;
-    String habla, respuesta;
-    Button b, es, in;
+    private String habla, respuesta;
+    private Button b, es, in;
 
 
     /***********************************************************************/
